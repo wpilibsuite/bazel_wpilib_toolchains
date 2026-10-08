@@ -1,28 +1,26 @@
-constraint_setting(
-    name = "is_trixie64",
-    default_constraint_value = ":false",
-)
-
-constraint_value(
+alias(
     name = "true",
-    constraint_setting = ":is_trixie64",
+    actual = "//constraints/is_systemcore:false",
     visibility = ["//visibility:public"],
-)
-
-constraint_value(
-    name = "false",
-    constraint_setting = ":is_trixie64",
 )
 
 config_setting(
     name = "trixie64",
-    constraint_values = [":true"],
+    constraint_values = [
+        "@platforms//os:linux",
+        "@platforms//cpu:arm64",
+        ":true",
+    ],
     visibility = ["//visibility:public"],
 )
 
 config_setting(
     name = "trixie64_debug",
-    constraint_values = [":true"],
+    constraint_values = [
+        "@platforms//os:linux",
+        "@platforms//cpu:arm64",
+        ":true",
+    ],
     values = {
         "compilation_mode": "dbg",
     },
