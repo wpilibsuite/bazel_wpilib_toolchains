@@ -51,13 +51,20 @@ cc_toolchain(
     toolchain_config = cc_toolchain_config_name,
 )
 
+target_compatible_with = [
+    # We currently only have cross compilers for Linux aarch64.
+    "@platforms//cpu:aarch64",
+    "@platforms//os:linux",
+    "@wpilib_toolchains//constraints/is_{repo_short_name}:true",
+] if "{target_system_name}" == "aarch64-linux-gnu" else fail("platforms need fixing")
+
 toolchain(
     name = "windows",
     exec_compatible_with = [
         "@platforms//cpu:x86_64",
         "@platforms//os:windows",
     ],
-    target_compatible_with = ["@wpilib_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = target_compatible_with,
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )
@@ -68,7 +75,7 @@ toolchain(
         "@platforms//cpu:x86_64",
         "@platforms//os:linux",
     ],
-    target_compatible_with = ["@wpilib_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = target_compatible_with,
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )
@@ -79,7 +86,7 @@ toolchain(
         # assuming x86/ARM Macs use the same x86 WPILib toolchain
         "@platforms//os:osx",
     ],
-    target_compatible_with = ["@wpilib_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = target_compatible_with,
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )

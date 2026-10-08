@@ -1635,8 +1635,8 @@
     },
     "@@wpilib_toolchains~//:extensions.bzl%cfg": {
       "general": {
-        "bzlTransitiveDigest": "4EcQ5gXuzBG/F4iFNA3PnbuyuHwxHSMo3YEgjMR8dHY=",
-        "usagesDigest": "pRHzX4asUrFL/buyNA06VqOolZmf21XXe4+5dyE6Gd4=",
+        "bzlTransitiveDigest": "5T579AHRwLc0A/i+Rdu35JYg72ihUReW8rstqjx6gUg=",
+        "usagesDigest": "5UqJQ8U9psc8H4pKJFkJJNPvlpZZjXNgu2RXWDcYuVs=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
