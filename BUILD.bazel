@@ -1,0 +1,8 @@
+load("@buildifier_prebuilt//:rules.bzl", "buildifier")
+
+buildifier(
+    name = "buildifier.fix",
+    lint_mode = "fix",
+    lint_warnings = ["all"],
+    mode = "fix",
+)

@@ -3,9 +3,9 @@ module(
     version = "2027-1.bcr1",
 )
 
-bazel_dep(name = "platforms", version = "0.0.9")
+bazel_dep(name = "platforms", version = "0.0.11")
 bazel_dep(name = "rules_cc", version = "0.1.1")
-bazel_dep(name = "bazel_skylib", version = "1.6.1")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
 
 deps = use_extension("//:maven_deps.bzl", "deps")
 use_repo(
@@ -41,3 +41,5 @@ register_toolchains(
     "@local_systemcore_debug//:linux",
     "@local_systemcore_debug//:windows",
 )
+
+bazel_dep(name = "buildifier_prebuilt", version = "8.5.1.4", dev_dependency = True)
