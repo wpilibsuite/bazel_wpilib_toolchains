@@ -79,8 +79,8 @@
   "moduleExtensions": {
     "//:extensions.bzl%cfg": {
       "general": {
-        "bzlTransitiveDigest": "4EcQ5gXuzBG/F4iFNA3PnbuyuHwxHSMo3YEgjMR8dHY=",
-        "usagesDigest": "OKYDkepcO9pE5e6iGCkcGDp9LGYsehVfOF2PI+PLcF8=",
+        "bzlTransitiveDigest": "5T579AHRwLc0A/i+Rdu35JYg72ihUReW8rstqjx6gUg=",
+        "usagesDigest": "Pcukqgenqrpg1CNxgPK88bfG0AT8DQi5itaBRkgGGlQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

@@ -3,7 +3,7 @@ platform(
     constraint_values = [
         "@platforms//os:linux",
         "@platforms//cpu:arm64",
-        "//constraints/is_trixie64:true",
+        "//constraints/is_systemcore:false",
     ],
     visibility = ["//visibility:public"],
 )
