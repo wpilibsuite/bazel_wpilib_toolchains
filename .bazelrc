@@ -23,4 +23,3 @@ build:athena --config=roborio
 build:linuxarm64 --config=trixie64
 
 test --test_output=errors
-common --registry=https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/
