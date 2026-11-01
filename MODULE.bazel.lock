@@ -77,62 +77,6 @@
   },
   "selectedYankedVersions": {},
   "moduleExtensions": {
-    "//:extensions.bzl%cfg": {
-      "general": {
-        "bzlTransitiveDigest": "4EcQ5gXuzBG/F4iFNA3PnbuyuHwxHSMo3YEgjMR8dHY=",
-        "usagesDigest": "OKYDkepcO9pE5e6iGCkcGDp9LGYsehVfOF2PI+PLcF8=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "local_systemcore_debug": {
-            "bzlFile": "@@//toolchains:configure_cross_compiler.bzl",
-            "ruleClassName": "configure_cross_compiler",
-            "attributes": {
-              "extra_defines": [],
-              "bin_subfolder": "systemcore/bin",
-              "bin_prefix": "aarch64-systemcore2027-linux-gnu-",
-              "sysroot_subfolder": "systemcore/aarch64-linux-gnu/sysroot",
-              "cxx_version": "14",
-              "target_cpu": "armv8a",
-              "target_system_name": "aarch64-linux-gnu",
-              "sysroot_include_folder": "aarch64-linux-gnu",
-              "repo_shortname": "systemcore_debug"
-            }
-          },
-          "local_systemcore": {
-            "bzlFile": "@@//toolchains:configure_cross_compiler.bzl",
-            "ruleClassName": "configure_cross_compiler",
-            "attributes": {
-              "extra_defines": [],
-              "bin_subfolder": "systemcore/bin",
-              "bin_prefix": "aarch64-systemcore2027-linux-gnu-",
-              "sysroot_subfolder": "systemcore/aarch64-linux-gnu/sysroot",
-              "cxx_version": "14",
-              "target_cpu": "armv8a",
-              "target_system_name": "aarch64-linux-gnu",
-              "sysroot_include_folder": "aarch64-linux-gnu",
-              "repo_shortname": "systemcore"
-            }
-          },
-          "local_trixie64": {
-            "bzlFile": "@@//toolchains:configure_cross_compiler.bzl",
-            "ruleClassName": "configure_cross_compiler",
-            "attributes": {
-              "bin_subfolder": "trixie/bin",
-              "bin_prefix": "aarch64-trixie-linux-gnu-",
-              "sysroot_subfolder": "trixie/aarch64-linux-gnu/sysroot",
-              "cxx_version": "14",
-              "target_cpu": "armv8a",
-              "target_system_name": "aarch64-linux-gnu",
-              "sysroot_include_folder": "aarch64-linux-gnu",
-              "repo_shortname": "trixie64"
-            }
-          }
-        },
-        "recordedRepoMappingEntries": []
-      }
-    },
     "@@apple_support~//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
         "bzlTransitiveDigest": "PjIds3feoYE8SGbbIq2SFTZy3zmxeO2tQevJZNDo7iY=",
