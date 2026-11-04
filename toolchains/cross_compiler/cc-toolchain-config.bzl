@@ -51,12 +51,9 @@ def _impl(ctx):
         ACTION_NAMES.clif_match,
     ]
 
-    # TODO(austin): Turn this on when the new toolchain is released.
-    use_gold = False
-
     tool_paths = [
         tool_path(name = "gcc", path = "bin/gcc" + wrapper_extension),
-        tool_path(name = "ld", path = "bin/ld.gold" + wrapper_extension if use_gold else "bin/ld" + wrapper_extension),
+        tool_path(name = "ld", path = "bin/ld" + wrapper_extension),
         tool_path(name = "ar", path = "bin/ar" + wrapper_extension),
         tool_path(name = "cpp", path = "bin/cpp" + wrapper_extension),
         tool_path(name = "gcov", path = "bin/gcov" + wrapper_extension),
@@ -108,10 +105,7 @@ def _impl(ctx):
                 actions = all_link_actions + lto_index_actions,
                 flag_groups = ([
                     flag_group(
-                        flags = ([
-                            # Enables --start-lib
-                            "-fuse-ld=gold",
-                        ] if use_gold else []) + [
+                        flags = [
                             "-pthread",
                             "-latomic",
                             "-lstdc++",
@@ -283,14 +277,6 @@ def _impl(ctx):
         enabled = True,
     )
 
-    features = []
-    if use_gold:
-        supports_start_end_lib_feature = feature(
-            name = "supports_start_end_lib",
-            enabled = True,
-        )
-        features.append(supports_start_end_lib_feature)
-
     gcc_quoting_for_param_files_feature = feature(
         name = "gcc_quoting_for_param_files",
         enabled = True,
@@ -325,7 +311,7 @@ def _impl(ctx):
         ],
     )
 
-    features += [
+    features = [
         unfiltered_compile_flags_feature,
         default_link_flags_feature,
         default_compile_flags_feature,
