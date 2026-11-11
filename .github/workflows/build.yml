@@ -21,8 +21,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v7
-    - uses: actions/setup-python@v7
-      with: { python-version: '3.14' }
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
@@ -50,8 +48,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v7
-    - uses: actions/setup-python@v7
-      with: { python-version: '3.14' }
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
@@ -76,8 +72,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v7
-    - uses: actions/setup-python@v7
-      with: { python-version: '3.14' }
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
