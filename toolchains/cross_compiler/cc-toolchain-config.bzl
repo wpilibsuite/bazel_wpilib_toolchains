@@ -212,7 +212,6 @@ def _impl(ctx):
                         flags = [
                             "-std=c++23",
                             "-Wno-error=deprecated-declarations",
-                            "-Wno-deprecated-enum-enum-conversion",
                             "-Wformat=2",
                             "-pedantic",
                             "-Wno-psabi",
