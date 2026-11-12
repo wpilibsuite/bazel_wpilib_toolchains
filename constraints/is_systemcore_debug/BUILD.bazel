@@ -16,6 +16,9 @@ constraint_value(
 
 config_setting(
     name = "systemcore_debug",
-    constraint_values = [":true"],
+    constraint_values = [
+        "//constraints/is_systemcore:true",
+        ":true",
+    ],
     visibility = ["//visibility:public"],
 )
