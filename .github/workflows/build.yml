@@ -12,22 +12,15 @@ jobs:
       matrix:
         include:
         # Build bzlmod, native
-        - { name: "windows     - bzlmod native", os: windows-2022,   java_arch: "x64",     command: "test",   config: "--enable_bzlmod --config=windows",     bazel_options: "--output_user_root=C:\\bazelroot", }
-        - { name: "windows arm - bzlmod native", os: windows-2022,   java_arch: "x64",     command: "build",  config: "--enable_bzlmod --config=windows_arm", bazel_options: "--output_user_root=C:\\bazelroot", }
-        - { name: "ubuntu      - bzlmod native", os: ubuntu-22.04,   java_arch: "x64",     command: "test",   config: "--enable_bzlmod --config=linux",       bazel_options: "",                                 }
-        - { name: "macos       - bzlmod native", os: macos-14,       java_arch: "aarch64", command: "test",   config: "--enable_bzlmod --config=macos",       bazel_options: "",                                 }
+        - { name: "windows     - bzlmod native", os: windows-2022, command: "test",   config: "--enable_bzlmod --config=windows",     bazel_options: "--output_user_root=C:\\bazelroot", }
+        - { name: "windows arm - bzlmod native", os: windows-2022, command: "build",  config: "--enable_bzlmod --config=windows_arm", bazel_options: "--output_user_root=C:\\bazelroot", }
+        - { name: "ubuntu      - bzlmod native", os: ubuntu-22.04, command: "test",   config: "--enable_bzlmod --config=linux",       bazel_options: "",                                 }
+        - { name: "macos       - bzlmod native", os: macos-15, command: "test",   config: "--enable_bzlmod --config=macos",       bazel_options: "",                                 }
 
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with: { python-version: '3.11' }
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: 17
-        architecture: ${{ matrix.java_arch }}
+    - uses: actions/checkout@v7
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
@@ -48,20 +41,13 @@ jobs:
       matrix:
         include:
         # Build bzlmod, systemcore
-        - { name: "windows - bzlmod systemcore",  os: windows-2022, java_arch: "x64",     command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "--output_user_root=C:\\bazelroot", }
-        - { name: "ubuntu  - bzlmod systemcore",  os: ubuntu-22.04, java_arch: "x64",     command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "",                                 }
-        - { name: "macos   - bzlmod systemcore",  os: macos-14,     java_arch: "aarch64", command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "",                                 }
+        - { name: "windows - bzlmod systemcore",  os: windows-2022, command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "--output_user_root=C:\\bazelroot", }
+        - { name: "ubuntu  - bzlmod systemcore",  os: ubuntu-22.04, command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "",                                 }
+        - { name: "macos   - bzlmod systemcore",  os: macos-15, command: "build", config: "--enable_bzlmod --config=systemcore", bazel_options: "",                                 }
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with: { python-version: '3.11' }
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: 17
-        architecture: ${{ matrix.java_arch }}
+    - uses: actions/checkout@v7
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
@@ -79,20 +65,13 @@ jobs:
       matrix:
         include:
         # Build bzlmod, linuxarm64
-        - { name: "windows - bzlmod linuxarm64",  os: windows-2022, java_arch: "x64",     command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "--output_user_root=C:\\bazelroot", }
-        - { name: "ubuntu  - bzlmod linuxarm64",  os: ubuntu-22.04, java_arch: "x64",     command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "",                                 }
-        - { name: "macos   - bzlmod linuxarm64",  os: macos-14,     java_arch: "aarch64", command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "",                                 }
+        - { name: "windows - bzlmod linuxarm64",  os: windows-2022, command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "--output_user_root=C:\\bazelroot", }
+        - { name: "ubuntu  - bzlmod linuxarm64",  os: ubuntu-22.04, command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "",                                 }
+        - { name: "macos   - bzlmod linuxarm64",  os: macos-15, command: "build", config: "--enable_bzlmod --config=linuxarm64", bazel_options: "",                                 }
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with: { python-version: '3.11' }
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: 17
-        architecture: ${{ matrix.java_arch }}
+    - uses: actions/checkout@v7
     - id: setup_build_buddy
       uses: ./.github/actions/setup-build-buddy
       with:
